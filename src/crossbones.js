@@ -7,10 +7,18 @@
     if (typeof exports !== 'undefined') {
         Crossbones = exports;
     } else {
-        Crossbones = global.Crossbones = {};
+        Crossbones = global.Crossbones = global.Crossbones || {};
     }
 
     var FilterableCollection = Crossbones.FilterableCollection = Backbone.Collection.extend({
+        /**
+        * Collection of filter functions
+        */
+        filters: new Backbone.Collection(),
+        /**
+        * Temporary collection used to apply the filters to
+        */
+        tempCollection: new Backbone.Collection(),
         /**
          * Filter function for filtering an array by a supplied value
          */
