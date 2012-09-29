@@ -2,7 +2,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: '<json:package.json>',
         meta: {
-            banner: '// <%= pkg.name %> <%= pkg.version %>\n// Build Date: <%= grunt.template.today("yyyy-mm-dd") %>\n\n// (c) 2012 Kristofer Joseph.\n// Skull may be freely distributed under the MIT license.\n// For all details and documentation:\n// http://www.crossbones.com'
+            banner: '// <%= pkg.name %> <%= pkg.version %>\n// Build Date: <%= grunt.template.today("yyyy-mm-dd") %>\n\n// (c) 2012 Kristofer Joseph.\n// <%= pkg.name %> may be freely distributed under the MIT license.\n// For all details and documentation:\n// <%= pkg.url %>'
         },
         concat: {
             dist: {
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
         },
         docco: {
             app: {
-                src: ['bin/skull.js']
+                src: ['bin/crossbones.js']
             }
         }
     });

@@ -111,4 +111,40 @@ test('propertyByValueFilterFunction should return expected data', 1, function() 
         }], "Filtered data should match expected results" );
 });
 
+test('arrayByNameFilterFunction should return expected data', 1, function() {
+       var data = this.filterableCollection.addFilter({
+            "id": "getDumb",
+            "args": ["hobbies", "twitterz"],
+            "filterFunction": "arrayByNameFilterFunction"
+        });
+       deepEqual( data, [{
+            "id": 2,
+            "name": "fwi",
+            "hobbies": [
+            "cats",
+            "design",
+            "twitterz"
+            ]
+        }], "Filtered data should match expected results" );
+});
+
+test('stringInPropertyFilterFunction should return expected data', 1, function() {
+       var data = this.filterableCollection.addFilter({
+            "id": "getDumb",
+            "args": ["name", "um"],
+            "filterFunction": "stringInPropertyFilterFunction"
+        });
+       deepEqual( data, [{
+            "id": 4,
+            "name": "fwum",
+            "hobbies": [
+            "cats",
+            "design",
+            "music"
+            ]
+        }], "Filtered data should match expected results" );
+});
+
+
+
 
