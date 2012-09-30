@@ -64,7 +64,6 @@
         // Applies all the existing filters to the data set and returns the results
         applyFilters: function() {
             var self = this,
-                results = [],
                 tempCollection = this.tempCollection.reset(self.toJSON());
 
             self.filters.each(function(filterModel) {
