@@ -1,5 +1,5 @@
 // Crossbones.js 0.0.1-alpha
-// Build Date: 2012-09-28
+// Build Date: 2012-09-30
 
 // (c) 2012 Kristofer Joseph.
 // Crossbones.js may be freely distributed under the MIT license.
@@ -71,7 +71,6 @@
         // Applies all the existing filters to the data set and returns the results
         applyFilters: function() {
             var self = this,
-                results = [],
                 tempCollection = this.tempCollection.reset(self.toJSON());
 
             self.filters.each(function(filterModel) {
